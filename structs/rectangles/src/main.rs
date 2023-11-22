@@ -1,3 +1,5 @@
+
+#[derive(Debug)]
 struct Rectangle {
     width: u32,
     heigth: u32,
@@ -15,6 +17,13 @@ impl Rectangle {
 
         return false;
     }
+
+    fn square(size: u32) -> Self {
+        Self {
+            width: size,
+            heigth: size,
+        }
+    }
 }
 
 
@@ -28,6 +37,10 @@ fn main() {
         width: 20,
         heigth: 30,
     };
+
+    let rec3 = Rectangle::square(30);
+
+    println!("rec3: {:?}", rec3);
 
     let area1 = rec1.area();
 
