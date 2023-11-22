@@ -1,11 +1,22 @@
-fn main() {
-    let a = [1, 2, 3, 4, 5];
+#[derive(Debug)]
+struct Rectangle {
+    width: u32,
+    height: u32,
+}
 
-    let slice = &a[1..3];
-
-    for byte in slice {
-        println!("{}", byte);
+impl Rectangle {
+    fn width(&self) -> bool {
+        self.width > 0
     }
+}
 
-    println!("{}", slice[0]);
+fn main() {
+    let rect1 = Rectangle {
+        width: 30,
+        height: 50,
+    };
+
+    if rect1.width() {
+        println!("The rectangle has a nonzero width; it is {}", rect1.width());
+    }
 }
